@@ -2,4 +2,4 @@
 Python öğrenirken yaptığım projeler:
 
 * Adam asmaca
-* 
+  
