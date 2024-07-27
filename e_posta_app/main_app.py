@@ -3,18 +3,18 @@ from tkinter import messagebox
 from tkcalendar import DateEntry
 from email_sender import send_email
 
-kullanici = "teomanates1@gmail.com"
-sifre = "ccqz fzne nvko hpxd" # NOT: Eğer çift aşamalı doğrulama varsa, google ayarlardan uygulama şifresi alınıp buraya o yazılmalıdır.
-alici = kullanici # Kendimize atmak içindir.
+kullanici = "<kullanici_adi>" #Kendi posta adresimiz.
+sifre = "<sifre>" # NOT: Eğer çift aşamalı doğrulama varsa, google ayarlardan uygulama şifresi alınıp buraya o yazılmalıdır.
+alici = kullanici # Başka birine atmak için değiştirilmelidir.
 
 def on_click(event):
     # Eğer metin alanı hala karşılama metnini içeriyorsa, metni siler
     if metin_alani.get("1.0", END).strip() == karsilama_metni:
         metin_alani.delete("1.0", END)
-        metin_alani.tag_configure("style", foreground="black")  # Metin rengini normal hale getir
+        metin_alani.tag_configure("style", foreground="black")  # Metin rengini normal hale getirir
 
 def on_key_release(event):
-    # Metin alanındaki tüm metne stil uygula
+    # Metin alanındaki tüm metne stil uygular
     metin_alani.tag_add("default_style", "1.0", "end")
 
 def gonder():
@@ -28,7 +28,7 @@ def gonder():
                 tarih= hatirlatma_tarih_secici.get() 
                 mesaj= metin_alani.get("1.0", "end")
 
-                with open ("D:\masaustu\VSCODE and projects\projects\Dersler\e_posta_app\hatirlatma.txt", "w") as dosya:
+                with open ("path\of\file\hatirlatma.txt", "w") as dosya:
                     dosya.write(
                         '{} kategorisinde {} tarihine ve "{}" notuyla hatirlatma'.format(
                             tip,
@@ -39,8 +39,8 @@ def gonder():
                     dosya.close()
 
             elif var.get() == 2:
-                baslik= "HATİRLATMA!"
-                mesaj = metin_alani.get("1.0",END).strip() #strip baştaki ve sondaki boşlukları kaldırır.
+                baslik= "HATIRLATMA!"
+                mesaj = metin_alani.get("1.0",END).strip() 
                 send_email(kullanici, sifre, alici, baslik, mesaj)
                 son_mesaj += "E-posta yoluyla hatirlatma size gönderilecektir!"
             messagebox.showinfo("Başarili İslem", son_mesaj)
@@ -90,8 +90,6 @@ hatirlatma_tarih_secici.pack(padx= 10, pady=10, side=RIGHT)
 hatirlatma_tarihi_etiket = Label(frame_ust, bg="#8b795e", text="Hatirlatma Tarihi:", font="Verdana 12 bold")
 hatirlatma_tarihi_etiket.pack(padx=10, pady=10, side=RIGHT)
 
-# PART - ||
-
 Label(frame_alt_sol, text="Hatirlatma Yöntemi:", bg="#8b795e", font="Verdana 10 bold").pack(padx=10, pady=10, anchor=NW)#north west
 
 var = IntVar()
@@ -109,8 +107,6 @@ Checkbutton(frame_alt_sol, text="Bir Gün Önce", variable=var2, onvalue=1, offv
 
 var3 = IntVar()
 Checkbutton(frame_alt_sol, text="Bir Saat Önce", variable=var3, onvalue=1, offvalue=0, bg="#8b795e", font="Verdana 7").pack(anchor=NW, pady=4, padx=39)
-
-# PART - |||
 
 Label(frame_alt_sag, text="Hatirlatma Mesaji:", bg="#8b795e", font="Verdana 10 bold").pack(padx=10, pady=9, anchor=NW)
 metin_alani = Text(frame_alt_sag, height=7, width=60, bg="#faebd7", pady=15)
