@@ -2,5 +2,5 @@
 Python öğrenirken yaptığım projeler:
 
 * Adam asmaca
-* Ronalda vs messi (radar chart)
-  
+* Ronaldo vs messi (radar chart)
+* Basic Reminder with GUI
