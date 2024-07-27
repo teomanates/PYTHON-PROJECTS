@@ -2,7 +2,7 @@
 Python öğrenirken yaptığım projeler:
 
 * Adam asmaca
- - Terminal üzerinden oynanabilir.
+  - Terminal üzerinden oynanabilir.
 
 * Ronaldo vs messi (radar chart)
   - Radar Chart üzerinde FIFA Rating'lerini girdiğiniz oyuncuları karşılaştırabilirsiniz.
