@@ -10,3 +10,7 @@ Python öğrenirken yaptığım projeler:
 * Basic Reminder with GUI
   - Hatırlatma dosyasına mesajınızı yazabilir, sisteme kaydedebilirsiniz.
   - Hatırlatma mesajını e-posta yolu ile iletebilirsiniz.
+
+* E-posta okuyucusu
+  - Belirli bir gönderenden ve tarihten gelen e-postaları okuyabilirsiniz.
+  - Bu e-postalardaki ekleri yerel bir dizine kaydetmenize olanak tanır. Dizin, gönderenin e-posta önekinden sonra adlandırılır.
